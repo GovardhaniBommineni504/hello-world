@@ -1,0 +1,211 @@
+<html>
+<head>
+<title>User Login Page</title>
+<header><center>
+<h1 style="color:white">Welcome To Cognizant</h1></center>
+</header>
+<style>
+h1 {
+  background-color: blue;
+}
+.header{
+position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 1.5;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 19;
+  bottom:10;
+  left: 0;
+  background-color: Azure;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: Magenta;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: green;
+ 
+}
+
+/* Main content */
+.main {
+  margin-top: 50px;
+  margin-left: 250px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 10px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color:white;
+  color: black;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: pink;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Credit to bootsnipp.com for the css for the color graph */
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+</style>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<script>
+function validateForm() {
+  var email = document.forms["form1"]["email"].value;
+  if (email == "" || email == null) {
+    alert("email field must be filled out");
+    return false;
+  }
+  
+  var password = document.forms["form1"]["password"].value;
+  if (password == "" || password == null) {
+    alert("password field must be filled out");
+    return false;
+  }  
+}
+</script>
+
+</head>
+<body>
+<div class="container">
+
+<div class="row" style="margin-top:20px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		
+		<form action="signin.html" >
+			<fieldset>
+		
+				<h2>Please Sign In</h2>
+				<hr class="colorgraph">
+				<div class="form-group">
+                    <input type="name" name="email" id="email" class="form-control input-lg" placeholder="User Name" path="username"/>
+				</div>
+				<div class="form-group">
+                    <input type="password" name="password" id="password" class="form-control input-lg" path="password" placeholder="Password"/>
+				</div>
+				
+				<hr class="colorgraph">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6">
+                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Sign In">
+					</div>
+					
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>@All Rights to Cognizant</p>
+</div>
+
+<div class="sidenav">
+  <button class="dropdown-btn"><a href="home.html">Home</a>
+    <i class="fa fa-caret-down"></i>
+  
+  <button class="dropdown-btn">CTS Tech
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="art.html">Artificial Intelligence</a>
+    <a href="digital.html">Digital Engineering</a>
+    <a href="IOT.html">Internet of Things</a>
+<a href="es.html">Enterprise Services</a>
+  </div>
+</a>
+  <button class="dropdown-btn"><a href="aboutcts.html">About Us
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <button class="dropdown-btn"><a href="contactus.html">ContactUs</a> 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  
+</div>
+
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+</body>
